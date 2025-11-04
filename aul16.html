@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuliaGram - Sosial Media Aulia Nur Rohman</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #fdf6e3;
+      background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20210709/pngtree-floral-rose-cream-background-picture-image_608272.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      font-family: 'Poppins', sans-serif;
+      color: #3b3b3b;
+    }
+
+    .navbar {
+      background-color: rgba(245, 222, 179, 0.95);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 600;
+      color: #8b4513 !important;
+    }
+
+    .profile-card {
+      background-color: rgba(255, 250, 240, 0.95);
+      border-radius: 20px;
+      padding: 25px;
+      margin: 20px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #f5deb3;
+    }
+
+    .feed-card {
+      background-color: rgba(255, 250, 240, 0.95);
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .feed-img {
+      width: 100%;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .feed-actions i {
+      cursor: pointer;
+      font-size: 1.3rem;
+      margin-right: 15px;
+      color: #b5651d;
+      transition: color 0.3s;
+    }
+
+    .feed-actions i:hover {
+      color: #ff7f50;
+    }
+
+    footer {
+      background-color: rgba(245, 222, 179, 0.9);
+      text-align: center;
+      padding: 15px;
+      border-top: 1px solid #e6d8b6;
+      margin-top: 50px;
+    }
+
+    .comment-box {
+      display: none;
+    }
+
+    .rose-decor {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .rose-decor img {
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">🌹 AuliaGram</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#profil">Profil Saya</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dekorasi Mawar -->
+  <div class="rose-decor">
+    <img src="mawar.jpg" alt="Rose">
+  </div>
+
+  <div class="container">
+    <div class="row mt-4">
+      <!-- Profil Kiri -->
+      <div class="col-md-4">
+        <div class="profile-card text-center" id="profil">
+          <img src="au3.jpg" alt="Aulia" class="profile-img mb-3">
+          <h4 class="fw-bold">Aulia Nur Rohman</h4>
+          <p class="text-muted">🌷 Pemilik Akun | gaut, Indonesia</p>
+          <p>"Berbagi keindahan dan kenangan lewat setiap foto 🌸"</p>
+          <hr>
+          <p><strong>Postingan:</strong> 1250| <strong>Pengikut:</strong> 2.1K | <strong>Mengikuti:</strong> 80</p>
+        </div>
+      </div>
+
+      <!-- Feed Kanan -->
+      <div class="col-md-8">
+        <div id="feed">
+          <!-- Postingan 1 -->
+          <div class="feed-card p-3">
+            <div class="d-flex align-items-center mb-2">
+              <img src="au3.jpg" class="rounded-circle me-2" width="40" height="40" alt="Aulia">
+              <strong>Aulia Nur Rohman</strong>
+            </div>
+            <img src="ara.jpg" class="feed-img mb-2" alt="Liburan">
+            <p class="mb-2"><strong>hari batik </strong> gaya lucu</p>
+            <div class="feed-actions">
+              <i class="bi bi-heart" onclick="toggleLike(this)"></i>
+              <i class="bi bi-chat" onclick="toggleComment(this)"></i>
+              <i class="bi bi-share" onclick="sharePost('Liburan di Bali 🌴')"></i>
+            </div>
+            <div class="comment-box mt-3">
+              <input type="text" class="form-control" placeholder="Tulis komentar...">
+            </div>
+          </div>
+
+          <!-- Postingan 2 -->
+          <div class="feed-card p-3">
+            <div class="d-flex align-items-center mb-2">
+              <img src="au3.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
+              <strong>Aulia Nur Rohman</strong>
+            </div>
+            <img src="makan.jpg" class="feed-img mb-2" alt="Foto Rina">
+            <p><strong>makan bersama </strong> — makan dengan penuh tawa dan kehangatan 💕</p>
+            <div class="feed-actions">
+              <i class="bi bi-heart" onclick="toggleLike(this)"></i>
+              <i class="bi bi-chat" onclick="toggleComment(this)"></i>
+              <i class="bi bi-share" onclick="sharePost('Sunset Healing 🌅')"></i>
+            </div>
+            <div class="comment-box mt-3">
+              <input type="text" class="form-control" placeholder="Tulis komentar...">
+            </div>
+          </div>
+
+          <!-- Postingan 3 -->
+          <div class="feed-card p-3">
+            <div class="d-flex align-items-center mb-2">
+              <img src="au3.jpg" class="rounded-circle me-2" width="40" height="40" alt="Aulia">
+              <strong>Aulia Nur Rohman</strong>
+            </div>
+            <img src="bunga.jpg" class="feed-img mb-2" alt="Gunung">
+            <p><strong>bunga bunga</strong> — bunganya lucu kaya kamu</p>
+            <div class="feed-actions">
+              <i class="bi bi-heart" onclick="toggleLike(this)"></i>
+              <i class="bi bi-chat" onclick="toggleComment(this)"></i>
+              <i class="bi bi-share" onclick="sharePost('Naik Gunung 🌄')"></i>
+            </div>
+            <div class="comment-box mt-3">
+              <input type="text" class="form-control" placeholder="Tulis komentar...">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Aulia Nur Rohman | 🌹 AuliaGram - Berbagi Keindahan & Cerita</p>
+  </footer>
+
+  <!-- Bootstrap & Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <script>
+    function toggleLike(icon) {
+      icon.classList.toggle('bi-heart');
+      icon.classList.toggle('bi-heart-fill');
+      icon.style.color = icon.classList.contains('bi-heart-fill') ? 'red' : '#b5651d';
+    }
+
+    function toggleComment(icon) {
+      const box = icon.parentElement.nextElementSibling;
+      box.style.display = box.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function sharePost(caption) {
+      alert('Bagikan postingan: ' + caption);
+    }
+  </script>
+</body>
+</html>
